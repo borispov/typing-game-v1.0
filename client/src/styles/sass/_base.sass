@@ -1,0 +1,113 @@
+body
+  background: $main-color
+  margin: 0
+  padding: 0
+
+.container
+  margin-top: 60px
+  text-align: center
+  padding: 15px
+  color: $text-primary
+  font-family: 'Work Sans'
+
+.displayName
+  animation: fade-in-double 1.5s cubic-bezier(0.15, 0.25, 0.52, 1.93) 0.8s
+  animation-fill-mode: forwards
+  opacity: 0
+  margin-top: 280px
+  height: 60px
+  border: none
+  padding: 1rem 2rem
+  font-size: 1.25rem
+  text-align: center
+  background: $main-color
+  // color: $text-primary
+  font-weight: bold
+  color: $black
+  outline: none
+  border: none
+  border-bottom: 1px solid $myRed
+  line-height: 25px
+  text-shadow: 0 2px 10px rgba(0,0,0,0.25)
+  &:focus
+    outline: none
+  &::placeholder
+    font-size: 1.05rem
+    // color: $text-primary
+    color: $black
+    text-shadow: 0 2px 1px rgba(0,0,0,0.45)
+    text-align: center
+
+.welcome
+  font-family: 'Audiowide'
+  color: $dark-blue
+
+h1
+  font-family: 'Audiowide'
+  color: $text-primary
+  color: $text-third
+
+.instructions
+  max-width: 300px
+  position: absolute
+  text-align: left
+  padding-left: 7px
+  top: 140px
+  right: 60px
+  color: $black
+  border-left: 1px solid $myRed
+  line-height: 1.5
+  font-weight: 300
+  animation: slide-in-from-right .2s linear 
+  ol
+    color: lighten($black, 10)  
+
+.rules
+  font-weight: 300
+  line-height: 1.55
+  max-width: 300px
+  position: absolute
+  text-align: left
+  padding-left: 7px
+  top: 310px
+  right: 60px
+  color: $black
+  border-left: 1px solid $myRed
+  animation: slide-in-from-right .5s ease-in-out
+  
+  ol
+    color: lighten($black, 10)
+
+.social 
+  animation: slide-in-from-left 0.5s cubic-bezier(0.25, 0.63, 0.62, 1.53) 0.15s
+  animation-fill-mode: forwards
+  // transform: scale(0)
+  position: absolute
+  top: 200px
+  left: -500px
+  max-width: 270px
+  text-align: left
+  &__title
+    margin: 0
+    font-family: 'Audiowide'
+    font-size: 1.35rem
+    color: $dark-blue
+  h4
+  &__about
+    font-weight: normal
+    font-family: 'Nobile', Helvetica, Arial, sans-serif;
+
+  &__list
+    display: flex
+    flex-flow: row wrap
+    list-style: none
+    margin-top: 20px
+    padding: 0
+    justify-content: space-between
+    max-width: 150px
+  &__item
+    color: $dark-blue
+    font-size: 1.5em
+
+.gameText__loading
+  position: relative

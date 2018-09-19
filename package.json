@@ -1,28 +1,23 @@
 {
   "name": "typing-game",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "main": "server.js",
   "dependencies": {
-    "axios": "^0.18.0",
-    "node-sass": "*",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
-    "react-icons": "^3.0.5",
-    "react-scripts": "1.1.4"
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.0.1",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.15"
   },
   "scripts": {
-    "sass": "node-sass -w src/styles/sass -o src/styles/css --recursive",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-build": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client "
   },
   "author": "Boris Povolotsky",
   "devDependencies": {
-    "eslint": "^5.4.0",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.1",
-    "eslint-plugin-react": "^7.11.1"
+    "nodemon": "^1.18.4"
   }
 }

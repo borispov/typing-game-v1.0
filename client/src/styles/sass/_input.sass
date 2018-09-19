@@ -1,0 +1,30 @@
+.userInput 
+  position: relative 
+  animation: scale-in 0.3s ease-in-out 0s 
+.userinput
+  padding: 15px 
+  line-height: 25px
+  position: relative
+  &__input
+    padding: 0 20px
+    margin-bottom: 0
+    margin-top: 5px
+    font-size: 1.25rem
+    width: 300px
+    background: $main-color
+    color: $text-primary
+    height: 60px
+    outline: none
+    border: none
+    box-shadow: 0 1px 15px 2px $dark-blue
+    border-bottom: 1px solid $myRed
+    &:focus
+      outline: none
+    &::placeholder
+      color: $text-primary
+      text-align: center
+    &.-error::placeholder
+      font-size: 1.15rem
+      color: darken($myRed, 30)
+      font-weight: bold
+      text-shadow: 1px 1px 1px rgba(0,0,0,0.1)

@@ -1,4 +1,4 @@
-# Typing Game App built with React.js
+# Typing Game App built with MERN: MongoDB, Express, React, Node.
 
 Hello and welcome to my first typing game which is also build with React as part of my React studying.
 

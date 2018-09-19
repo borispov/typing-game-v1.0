@@ -1,0 +1,398 @@
+@import 'config'
+@import 'loader'
+
+body
+  background: $main-color
+  margin: 0
+  padding: 0
+
+.container
+  margin-top: 60px
+  text-align: center
+  padding: 15px
+  color: $text-primary
+  font-family: 'Work Sans'
+
+.gameText 
+  height: 100px
+  max-height: 150px
+  margin-bottom: 140px
+  position: relative
+  display: inline-block
+  max-width: 590px
+  &__text
+    font-size: 1.25rem
+    // width: auto
+    border-radius: 10px
+    padding: 15px 15px 20px
+    color: #FFE7D3
+    background: linear-gradient(168deg, $dark-blue 5%, $black 25%, $dark-blue 80%, $black 100%)
+
+.userInput 
+  position: relative 
+  animation: scale-in 0.3s ease-in-out 0s 
+.userinput
+  padding: 15px 
+  line-height: 25px
+  position: relative
+  &__input
+    padding: 0 20px
+    margin-bottom: 0
+    margin-top: 5px
+    font-size: 1.25rem
+    width: 300px
+    background: $main-color
+    color: $text-primary
+    height: 60px
+    outline: none
+    border: none
+    box-shadow: 0 1px 15px 2px $dark-blue
+    border-bottom: 1px solid $myRed
+    &:focus
+      outline: none
+    &::placeholder
+      color: $text-primary
+      text-align: center
+    &.-error::placeholder
+      font-size: 1.15rem
+      color: darken($myRed, 30)
+      font-weight: bold
+      text-shadow: 1px 1px 1px rgba(0,0,0,0.1)
+
+.stats
+  max-width: 605px
+  margin: 60px auto 0
+  
+  .scoreboard
+    margin-bottom: 50px
+    border: 2px solid $black
+    box-shadow: 0 1px 15px 2px rgba(0,0,0,0.15)
+    display: flex
+    flex-flow: column wrap
+    text-align: left
+    &__labels
+      display: flex
+      background: $third-color
+      flex-flow: row 
+      justify-content: space-around
+      padding-left: 4px
+      font-weight: bold
+      border-bottom: 1px none $myRed
+      box-shadow: 0 1px 2px 2px rgba(0,0,0,0.1)
+      & > p:nth-of-type(1)
+        text-align: left
+        flex-basis: 200px
+
+    &__users
+      display: flex
+      justify-content: space-around
+      flex-flow: row
+      margin-left: -10px
+      & > p:nth-of-type(1)
+        flex-basis: 200px
+
+.gameText__loading
+  position: relative
+
+.displayName
+  animation: fade-in-double 1.5s cubic-bezier(0.15, 0.25, 0.52, 1.93) 0.8s
+  animation-fill-mode: forwards
+  opacity: 0
+  margin-top: 280px
+  height: 60px
+  border: none
+  padding: 1rem 2rem
+  font-size: 1.25rem
+  text-align: center
+  background: $main-color
+  // color: $text-primary
+  font-weight: bold
+  color: $black
+  outline: none
+  border: none
+  border-bottom: 1px solid $myRed
+  line-height: 25px
+  text-shadow: 0 2px 10px rgba(0,0,0,0.25)
+  &:focus
+    outline: none
+  &::placeholder
+      font-size: 1.05rem
+      // color: $text-primary
+      color: $black
+      text-shadow: 0 2px 1px rgba(0,0,0,0.45)
+      text-align: center
+
+
+  
+.welcome
+  font-family: 'Audiowide'
+  color: $dark-blue
+
+h1
+  font-family: 'Audiowide'
+  color: $text-primary
+  color: $text-third
+
+.timer
+  position: absolute
+  top: 100%
+  left: 40%
+  font-family: Courier New, Courier, monospace
+  &__title
+    color: $black
+    width: auto
+    display: inline-block
+    text-align: left
+    padding-right: 1.5rem
+  &__clock
+    color: $dark-blue
+    font-weight: bold
+    font-size: 1.7rem
+    width: 70px
+    display: inline-block
+    padding: 0
+  &__seconds
+    color: $dark-blue
+
+.instructions
+  max-width: 300px
+  position: absolute
+  text-align: left
+  padding-left: 7px
+  top: 140px
+  right: 60px
+  color: $black
+  border-left: 1px solid $myRed
+  line-height: 1.5
+  font-weight: 300
+  animation: slide-in-from-right .2s linear 
+
+  ol
+    color: lighten($black, 10)
+.rules
+  font-weight: 300
+  line-height: 1.55
+  max-width: 300px
+  position: absolute
+  text-align: left
+  padding-left: 7px
+  top: 310px
+  right: 60px
+  color: $black
+  border-left: 1px solid $myRed
+  animation: slide-in-from-right .5s ease-in-out
+  
+  ol
+    color: lighten($black, 10)
+
+.social 
+  animation: slide-in-from-left 0.5s cubic-bezier(0.25, 0.63, 0.62, 1.53) 0.15s
+  animation-fill-mode: forwards
+  // transform: scale(0)
+  position: absolute
+  top: 200px
+  left: -500px
+  max-width: 270px
+  text-align: left
+  &__title
+    margin: 0
+    font-family: 'Audiowide'
+    font-size: 1.35rem
+    color: $dark-blue
+  h4
+  &__about
+    font-weight: normal
+    font-family: 'Nobile', Helvetica, Arial, sans-serif;
+
+  &__list
+    display: flex
+    flex-flow: row wrap
+    list-style: none
+    margin-top: 20px
+    padding: 0
+    justify-content: space-between
+    max-width: 150px
+  &__item
+    color: $dark-blue
+    font-size: 1.5em
+
+$phone: "(min-width: 320px) and (max-width: 767px)"
+$tablet: "(min-width: 768px) and (max-width: 1023px)"
+$desktop: "(min-width: 1024px)"
+$small-desk: "(min-width: 1024px) and (max-width: 1350px)"
+$verysmall-desk: "(min-width: 1024px) and (max-width: 1112px)"
+
+@media #{$small-desk}
+  .instructions
+    font-weight: 300
+    right: 0
+    max-width: 240px
+    ol
+      list-style-type: none
+      padding: 0
+      & > li:first-letter
+        font-weight: bold
+        font-size: 1.05rem
+  .rules
+    right: 0
+    // text-align: right
+    max-width: 240px
+    ol
+      list-style-type: none
+      padding: 0
+      & > li:first-letter
+        font-weight: bold
+        font-size: 1.05rem
+  .gameText
+    font-size: 1.15rem
+    max-height: 500px
+    padding: 1.5rem
+    &:before, &:after
+      display: none
+
+@media #{$tablet}
+
+  .gameText
+    font-size: 1.05rem
+    height: 100px
+    max-height: 500px
+    // width: auto
+    max-width: 65%
+    border-radius: 10px
+    // padding: 15px 15px 20px
+    color: #FFE7D3
+    background: linear-gradient(168deg, $dark-blue 5%, $black 25%, $dark-blue 80%, $black 100%)
+    display: inline-block
+    position: relative
+    &__text
+      width: auto
+      padding: 2rem
+      &:before, &:after
+        display: none
+
+  .instructions, .rules
+    display: none
+  .social
+    position: static
+    text-align: center
+    width: 100%
+    margin: 25px auto 5px
+    &__list
+      display: flex
+      justify-content: space-between
+      width: 100%
+      margin-left: 50px
+  .timer
+    top: 100%
+    left: 15%
+  .scoreboard
+    width: 100%
+    margin-top: 0
+    padding-top: 0
+    &__labels
+      display: flex
+      background: $third-color
+      color: #1c1419
+      & > p:nth-of-type(2)
+        padding-right: 20px
+    &__users
+      & > p:nth-of-type(2)
+        padding-right: 20px
+      
+@media #{$phone}
+
+  .instructions, .rules
+    display: none
+  .social
+    position: static
+    text-align: center
+    width: 100%
+    margin: 25px auto 5px
+    &__list
+      display: flex
+      justify-content: space-between
+      width: 100%
+      margin-left: 50px
+  .timer
+    top: 100%
+    left: 15%
+  .scoreboard
+    width: 100%
+    margin-top: 0
+    padding-top: 0
+    &__labels
+      display: flex
+      background: $third-color
+      color: #1c1419
+      & > p:nth-of-type(2)
+        padding-right: 20px
+    &__users
+      & > p:nth-of-type(2)
+        padding-right: 20px
+    
+  .gameText
+    // margin: 0 15px
+    &__text
+      width: auto
+      padding: 2rem
+      &:before, :after
+        display: none
+      
+
+@media #{$verysmall-desk}
+  .instructions, .rules
+    max-width: 180px
+
+
+
+// animations 
+
+@keyframes slide-in-from-right
+  0%
+    right: -200px
+  100%
+    right: 60px
+
+@keyframes slide-in-from-left
+  0%
+    left: -500px
+    transform: rotate(0deg)
+  85%
+    transform: rotate(5deg)
+  87%
+    transform: rotate(10deg)
+  89%
+    transform: rotate(15deg)
+  92%
+    transform: rotate(10deg)
+  97%
+    transform: rotate(5deg)
+  100%
+    transform: rotate(0deg)
+    left: 60px
+
+@keyframes scale-in
+  0%
+    opacity: 0
+    transform: scale(0)
+  25%
+    opacity: 0.25
+  35%
+    opacity: 0.35
+  45%
+  75%
+    opacity: 0.6
+  100%
+    transform: scale(1)
+    opacity: 1
+
+@keyframes fade-in-double
+  0%
+    opacity: 0
+    transform: scale(0)
+  35%, 
+    opacity: 0.6
+    transform: scale(1)
+  100%
+    opacity: 1
+    transform: scale(1)
